@@ -56,6 +56,8 @@ public class Bus {
         From=s;
     }
 
+    
+
    /* public String getto(){
         return To;
     }

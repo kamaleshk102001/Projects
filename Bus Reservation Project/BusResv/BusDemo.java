@@ -1,3 +1,4 @@
+import java.text.Normalizer.Form;
 import java.util.*;
 import java.util.ArrayList;
 public class BusDemo{
@@ -25,22 +26,43 @@ public class BusDemo{
 
         Bus b1=new Bus();
 
-        
+        //String From=b1.getfrom();
          
         while(userOpt==1){
-            System.out.println("Enter 1 to book and 2 to exit");
+            System.out.println("Enter 1 to continue and 2 to exit");
             userOpt=s.nextInt();
             if(userOpt==1){
+            System.out.println("Enter 1 to book and 2 to cancel and 3 to exit");
+            int nextOpt=s.nextInt();
+            if(nextOpt==1){
                Booking booking=new Booking();
                if(booking.isAvailable(Bookings,Buses)){
                     Bookings.add(booking);
-                    System.out.println("Your"+b1.getfrom()+"booking is confirmed");
+                    System.out.println("Your booking is confirmed");
                     b1.displayName();
                 }
-                else{
-                    System.out.println("Sorry.Bus is full.Try another bus or date");
-                }
-            }    
-        }
+            }
+            else if(nextOpt==2){
+                    //Booking booking1=new Booking();
+                    if(Bookings.isEmpty()){
+                        System.out.println("Sorry no booking is present");
+                    }
+                    else{
+                        Booking booking1=Bookings.get(0);
+                        if(Bookings.contains(booking1)){
+                            System.out.println("Booking is cancelled");
+                            Bookings.remove(booking1);
+                        }
+                        else{
+                            System.out.println("Booking not present");
+                        }
+                    }
+            }
+            else{
+                    System.out.println("Enter correct number");
+            }
+        } 
+            
     }
+}
 }

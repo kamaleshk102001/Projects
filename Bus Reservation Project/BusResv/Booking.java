@@ -20,6 +20,11 @@ public class Booking {
         SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MM-yyyy");
         int BookingNumber=random.nextInt(1000);
         System.out.println(BookingNumber);
+
+        int choice=s.nextInt();
+        if(choice==1){
+            
+        }
         
         try {
             date=dateFormat.parse(dateInput);
@@ -51,5 +56,9 @@ public class Booking {
         }
 
         return booked<capacity?true:false;
+    }
+
+    public boolean isEmpty(ArrayList<Booking> bookings){
+       return bookings.isEmpty();
     }
 }
