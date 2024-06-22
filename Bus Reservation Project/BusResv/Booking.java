@@ -22,9 +22,9 @@ public class Booking {
         System.out.println(BookingNumber);
 
         int choice=s.nextInt();
-        if(choice==1){
+        /*if(choice==1){
             
-        }
+        }*/
         
         try {
             date=dateFormat.parse(dateInput);
